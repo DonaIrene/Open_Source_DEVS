@@ -2,8 +2,6 @@
 import pygame
 from sys import exit
 
-from pygame.constants import KEYDOWN
-
 
 pygame.init()
 
