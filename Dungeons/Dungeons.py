@@ -7,7 +7,7 @@ pygame.init()
 
 screen = pygame.display.set_mode((1240,1050))
 clock = pygame.time.Clock()
-game_tag = pygame.font.Font('Dungeons/font/breathefire/Breathefire.ttf',50)
+game_tag = pygame.font.Font('font/breathefire/Breathefire.ttf',50)
 
 map = pygame.Surface((1220,1030))
 map.fill('grey12')
@@ -15,7 +15,7 @@ game_tag1= game_tag.render('Fire and Water',False,'grey12')
 
 
 ##Level maps
-map_layer1 = pygame.image.load('Dungeons/img/clue mapp.jpg').convert()
+map_layer1 = pygame.image.load('img/clue mapp.jpg').convert()
 map_layer1 = pygame.transform.scale(map_layer1,(1200,1010))
 
 
@@ -23,21 +23,21 @@ map_layer1 = pygame.transform.scale(map_layer1,(1200,1010))
 DEFAULT_IMAGE_SIZE = (50,60)
 
 #Mage
-mage1= pygame.image.load('Dungeons/img/player/mage.png').convert_alpha()
+mage1= pygame.image.load('img/player/mage.png').convert_alpha()
 mage1 = pygame.transform.scale(mage1,DEFAULT_IMAGE_SIZE)
 mage_rect = mage1.get_rect(midbottom = (495,85))
 mage_x_pos  = 0
 mage_y_pos = 0
 
 #Pirate
-pirate = pygame.image.load('Dungeons/img/player/pirate.png').convert_alpha()
+pirate = pygame.image.load('img/player/pirate.png').convert_alpha()
 pirate = pygame.transform.scale(pirate,DEFAULT_IMAGE_SIZE)
 pirate_rect = pirate.get_rect(midbottom = (1145,795))
 pirate_x_pos = 0
 pirate_y_pos = 0
 
 ##Defender
-defender1 = pygame.image.load('Dungeons/img/player/defender.png').convert_alpha()
+defender1 = pygame.image.load('img/player/defender.png').convert_alpha()
 defender1 = pygame.transform.scale(defender1,DEFAULT_IMAGE_SIZE)
 defender1_rect = defender1.get_rect(midbottom = (405,980))
 defende_x_pos = 0
