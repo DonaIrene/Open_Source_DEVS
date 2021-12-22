@@ -8,13 +8,10 @@ from level import Level
 
 
 # Pygame Setup
-
 pygame.init()
-
 screen = pygame.display.set_mode((screen_width,screen_heigth))
 clock = pygame.time.Clock()
 level = Level(level_map,screen)
-player_one = Player(, screen)
 
 
 while True:
@@ -25,7 +22,6 @@ while True:
 
     screen.fill('black')
     level.run()
-    player_one.run()
 
     pygame.display.update()
     clock.tick(60)
