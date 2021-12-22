@@ -6,4 +6,4 @@ class Player(pygame.sprite.Sprite):
         super().__init__()
         self.image = pygame.surface.Surface((1,2))
         self.image.fill ('red')
-        self.rect =   self.image.get_rect(topleft = pos)
+        self.rect = self.image.get_rect(topleft = pos)
