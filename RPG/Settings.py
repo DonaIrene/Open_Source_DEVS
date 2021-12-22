@@ -1,14 +1,14 @@
 level_map= [
-    'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', # 24 colunas
-    'X                      XXXXXX     ', # 10 Strings
-    'X                      XXXXXX     ',
-    'X    X                 XXXXXX     ',
-    'X    XX    X           XXXXXXXX   ',
-    'X     X      XXX       XXXX       ',
-    'X       X    XX    X   XXXX   X   ',
-    'X     XXX    X     XX  XXXX  XX   ',
-    'X  XXXXXX    X                    ',
-    'XXXXXXXXX    XXXXXXXXXXXXXXXXXXXXX',
+    'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', # 24 colunas
+    'X                      XXXXXX                   X', # 10 Strings
+    'X                      XXXXXX                   X',
+    'X    X                 XXXXXX        XXX        X',
+    'X    XX    X           XXXXXXXX                 X',
+    'X     X      XXX       XXXX       XX        X   X',
+    'X       X    XX    X   XXXX    X   X         X  X',
+    'X     XXX    X     XX  XXXX  XX    X          X X',
+    'X  XXXXXX    X                     X            f',
+    'XXXXXXXXX    XXXXXXXXXXXXXXXXXXXXXXXX   XXXXXXXXX',
 ]
 
 title_size = 64
