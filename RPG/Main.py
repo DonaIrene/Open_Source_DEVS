@@ -1,9 +1,9 @@
 import pygame,sys
 
 # Game data
-from Settings import *
-from Titles import Titles
-from Level import Level
+from settings import *
+from tiles import Tile
+from level import Level
 
 
 # Pygame Setup
