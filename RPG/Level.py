@@ -1,4 +1,5 @@
 import pygame
+from pygame.sprite import DirtySprite
 from player import Player
 from tiles import Tile
 from settings import title_size
@@ -45,13 +46,35 @@ class Level:
             self.world_Shift = 0
             player.speed = 8
 
+    #def scrol_y(self):
+    #   player = self.player_one.sprite
+    #    player_y = player.rect.centery
+    #    direction_y = player.direction.y
+
+    #    if player_y < 200 and direction_y < 0:
+    #        self.world_Shift = 3
+    #        player.speed = 0
+    #    elif player_y > 1000 and direction_y > 0:
+    #        self.world_Shift = -3
+    #    else: 
+    #        self.world_Shift = 0 
+    #        player.speed = 8
+    
+    def horizontal_movement_collision (self):
+        player = self.player_one.sprite
+        player.self.rect.x += self.direction.x * self.speed
+
+        
+
     def run(self):
 
         #level tiles
         self.tiles.update(self.world_Shift)
         self.tiles.draw(self.display_surface)
+        self.scroll_x()
+    #    self.scrol_y()
         
         #Player
         self.player_one.update()
+        self.horizontal_movement_collision()
         self.player_one.draw(self.display_surface)
-        self.scroll_x()
