@@ -1,10 +1,7 @@
 import pygame
-from pygame.sprite import DirtySprite
-
-from tiles import Tile
-from settings import title_size
-from player import Player
-
+from data.tiles import Tile, Tile2
+from data.settings import title_size
+from data.charter import Jogador_01
 
 class Level: 
     def __init__(self,level_data,surface):
@@ -24,11 +21,15 @@ class Level:
                 y = row_index * title_size
                 
                 if cell == 'X':
-                    tile = Tile((x,y),title_size)
+                    tile = Tile((x,y))
+                    self.tiles.add(tile)
+
+                if cell == 'R':
+                    tile = Tile2((x,y))
                     self.tiles.add(tile)
 
                 if cell == 'P':
-                    player_sprite = Player((x,y))
+                    player_sprite = Jogador_01((x,y))
                     self.player_one.add(player_sprite)
 
     def scroll_x (self):
@@ -74,5 +75,5 @@ class Level:
         
         #Player
         self.player_one.update()
-        #self.horizontal_movement_collision()
+        self.horizontal_movement_collision()
         self.player_one.draw(self.display_surface)
