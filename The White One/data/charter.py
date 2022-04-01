@@ -20,7 +20,7 @@ class Jogador_01(pygame.sprite.Sprite):
         self.gravity = 0.08
         self.jump_speed = 0.3
 
-        par = self.direction.x/2
+        par = [2,4,6,8,10,12,14,16,18,20]
         if self.direction.x != par:
             self.image = pygame.image.load('img/charaters/forward2.png').convert_alpha()
         elif self.direction.x == par:
@@ -60,29 +60,32 @@ class Jogador_01(pygame.sprite.Sprite):
         keys = key.get_pressed()
         if keys[pygame.K_d] or keys[pygame.K_RIGHT]:
             #self.foward() 
-            self.direction.x += self.speed
+            self.direction.x += 1
             self.rect.x += self.direction.x
             print(self.direction.x)
         if keys[pygame.K_a] or keys[pygame.K_LEFT]:
             #self.backward()
-            self.direction.x -= self.speed
+            self.direction.x -= 1
             self.rect.x -= self.direction.x
             print(self.direction.x)
         if keys[pygame.K_w] or keys[pygame.K_UP]:
             #self.jump_up()
             self.direction.y -= self.jump_speed
-            self.rect.y += self.direction.y   
+            self.rect.y += self.direction.y
             print(self.direction.y)
         if keys[pygame.K_s] or keys[pygame.K_DOWN]:
             #self.crouch()
-            self.direction.y += self.speed
+            self.direction.y += 1
             self.rect.y -= self.direction.y
             print(self.direction.y)
     
+    def update(self,x_Shift,y_shift):
+        self.rect.x += x_Shift
+        self.rect.y += y_shift
+
     def update(self):
         self.get_input()
         self.apply_gravity()
-        
         
     
 
