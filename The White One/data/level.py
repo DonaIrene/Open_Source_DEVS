@@ -9,7 +9,8 @@ class Level:
 
         self.display_surface = surface
         self.setup_level(level_data)
-        self.world_Shift = 0
+        self.world_Shift_x = 0
+        self.world_Shift_y = 0
 
     def setup_level (self,layout):
         self.tiles = pygame.sprite.Group()
@@ -37,14 +38,14 @@ class Level:
         player_x = player.rect.centerx
         direction_x = player.direction.x
 
-        if player_x < 200 and direction_x < 0:
-            self.world_Shift= 8
+        if player_x < 100 and direction_x < 0:
+            self.world_Shift_x= 3
             player.speed = 0
-        elif player_x > 1000 and direction_x > 0:
-            self.world_Shift =-8
+        elif player_x > 50 and direction_x > 0:
+            self.world_Shift_x =-3
             player.speed = 0
         else:
-            self.world_Shift = 0
+            self.world_Shift_x = 0
             player.speed = 8
 
     def scrol_y(self):
@@ -53,22 +54,28 @@ class Level:
         direction_y = player.direction.y
 
         if player_y < 200 and direction_y < 0:
-            self.world_Shift = 3
+            self.world_Shift_y = 3
             player.speed = 0
         elif player_y > 1000 and direction_y > 0:
-            self.world_Shift = -3
+            self.world_Shift_y = -3
         else: 
-            self.world_Shift = 0 
+            self.world_Shift_y = 0 
             player.speed = 8
     
     def horizontal_movement_collision (self):
         player = self.player_one.sprite
-        player.rect.x += player.direction.x * player.speed
+        player.rect.x = player.direction.x * player.speed
+
+        collide = pygame.Rect.colliderect(self.player_one,self.tiles)
+        if collide:
+            self.tiles.right = player.left
+            
+
 
     def run(self):
 
         #level tiles
-        self.tiles.update(self.world_Shift,self.world_Shift)
+        self.tiles.update(self.world_Shift_x,self.world_Shift_y)
         self.tiles.draw(self.display_surface)
         self.scroll_x()
         self.scrol_y()
@@ -77,3 +84,4 @@ class Level:
         self.player_one.update()
         self.horizontal_movement_collision()
         self.player_one.draw(self.display_surface)
+

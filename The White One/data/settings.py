@@ -1,4 +1,4 @@
-import pygame
+
 level_map =[
     '                                                 ', # 24 colunas
     '                       XXXXXX                    ', # 10 lines
@@ -11,9 +11,9 @@ level_map =[
     '                                                 ',
     '                                                 ',
     '        X    XX    X   XXXX    X   X         X   ',
-    '      XXR    R     RR  RRRR  XX    X          X  ',
+    '      XXR    R     RR  RRRR  XXR   X          X  ',
     '        R    R                                   ',
-    'XP XX   RR                     X                f',
+    'XP XX   RR                                     f',
     'XXXRRXXXR    XXXXXXXXXXXXXXXXXXXXXXXX   XXXXXXXXX',
 ]
 

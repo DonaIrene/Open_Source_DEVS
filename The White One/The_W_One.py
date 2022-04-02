@@ -1,6 +1,5 @@
 
 import pygame
-import data.charter
 from sys import exit
 
 from pygame import event
@@ -17,7 +16,7 @@ level = Level(level_map,screen)
 back_color = pygame.Surface((1920,1020))
 back_color.fill("black")
 
-lvl1 = pygame.image.load('img/lvl1.jpg').convert_alpha()
+lvl1 = pygame.image.load('The White One/img/lvl1.jpg').convert_alpha()
 lvl1 = pygame.transform.scale(lvl1,(1920,1020))
 
 ##Player Charter

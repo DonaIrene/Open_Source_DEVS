@@ -1,9 +1,7 @@
-from importlib.util import set_loader
-from msilib.schema import Directory
-import pygame,sys
+
+import pygame
 
 from pygame import key
-import time
 
 ##Player Charter
 
@@ -19,15 +17,7 @@ class Jogador_01(pygame.sprite.Sprite):
         self.speed = 0.1
         self.gravity = 0.08
         self.jump_speed = 0.3
-
-        par = [2,4,6,8,10,12,14,16,18,20]
-        if self.direction.x != par:
-            self.image = pygame.image.load('img/charaters/forward2.png').convert_alpha()
-        elif self.direction.x == par:
-            self.image = pygame.image.load('img/charaters/forward.png').convert_alpha()
-        elif self.direction.x == 0:
-            self.image = pygame.image.load('img/charaters/forward1.png').convert_alpha()
-        
+        self.image = pygame.image.load('The White One/img/charaters/forward.png').convert_alpha()
         self.image = pygame.transform.scale(self.image,DEFAULT_IMAGE_SIZE)
         self.rect = self.image.get_rect(midbottom = pos)
 
