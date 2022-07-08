@@ -1,7 +1,7 @@
 import pygame,sys
 
 # Game data
-from settings import *
+from Settings import *
 from tiles import Tile
 from Level import Level
 

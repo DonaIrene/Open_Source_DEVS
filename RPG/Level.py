@@ -2,7 +2,7 @@ import pygame
 from pygame.sprite import DirtySprite
 
 from tiles import Tile
-from settings import title_size
+from Settings import title_size
 from player import Player
 
 
